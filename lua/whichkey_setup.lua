@@ -132,7 +132,7 @@ M.register_keymap = function(initial_key, keymap, opts)
             raw_key = '<LocalVisualBindings>'
         end
     else
-        if string.len(initial_key) > 1 then
+        if string.len(initial_key) > 1 and string.lower(initial_key) ~= '<space>' then
             vim.cmd('echoerr "Can only specify a single initial key, not '..initial_key..'"')
         end
         key = initial_key
